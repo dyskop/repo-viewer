@@ -25,6 +25,7 @@ public class RepoServiceImpl implements RepoService {
                 .accept(MediaType.parseMediaType(acceptHeader))
                 .retrieve()
                 .bodyToFlux(Repo.class)
+                .filter(repo -> !repo.isFork())
                 .flatMap(repo -> fetchBranches(repo, acceptHeader)
                         .collectList()
                         .map(repo::withBranches)

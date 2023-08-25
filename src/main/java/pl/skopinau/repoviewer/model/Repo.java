@@ -9,6 +9,7 @@ public class Repo {
     private String name;
     private Owner owner;
     private List<Branch> branches;
+    private boolean fork;
 
     public Repo withBranches(List<Branch> branches) {
         this.branches = branches;
