@@ -1,8 +1,12 @@
 package pl.skopinau.repoviewer.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
-import pl.skopinau.repoviewer.model.RepoInfo;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import pl.skopinau.repoviewer.dto.RepoInfo;
 import pl.skopinau.repoviewer.service.RepoService;
 import reactor.core.publisher.Flux;
 
