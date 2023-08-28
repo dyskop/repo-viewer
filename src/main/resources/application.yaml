@@ -1,2 +1,19 @@
+server:
+  port: ${APP_PORT}
+
+spring:
+  application:
+    name: repo-viewer
+
 webclient:
   base-url: https://api.github.com
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  cache:
+    disabled: true
