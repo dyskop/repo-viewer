@@ -6,9 +6,10 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class ExceptionResponse {
+public class ExceptionDetails {
+
     private int status;
 
-    //@JsonProperty("Message")
+    @JsonProperty("Message")
     private String message;
 }

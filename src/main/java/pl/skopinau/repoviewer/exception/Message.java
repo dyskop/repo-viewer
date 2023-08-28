@@ -1,13 +1,14 @@
 package pl.skopinau.repoviewer.exception;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 public enum Message {
-    USER_NOT_EXISTS("GitHub user does not exist: %s"),
-    UNSUPPORTED_MEDIA_TYPE("Unsupported media type: %s");
+
+    USER_NOT_FOUND("GitHub user not found: %s"),
+    NOT_ACCEPTABLE("Accept header must be %s");
 
     private final String message;
 }

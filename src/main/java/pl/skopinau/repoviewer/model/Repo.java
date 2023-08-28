@@ -6,6 +6,7 @@ import java.util.List;
 
 @Data
 public class Repo {
+
     private String name;
     private Owner owner;
     private List<Branch> branches;

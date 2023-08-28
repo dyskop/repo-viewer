@@ -1,6 +1,2 @@
-logging:
-  level:
-    root: debug
-server:
-  error:
-    include-message: always
+webclient:
+  base-url: https://api.github.com
