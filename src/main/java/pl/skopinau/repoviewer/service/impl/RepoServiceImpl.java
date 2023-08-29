@@ -18,10 +18,18 @@ import reactor.core.publisher.Mono;
 public class RepoServiceImpl implements RepoService {
 
     private final WebClient client;
+
     private final RepoMapper repoMapper;
 
     @Override
     public Flux<RepoInfo> getByUsername(String username) {
+        return fetchRepos(username).flatMap(repo -> fetchBranches(repo)
+                        .collectList()
+                        .map(repo::withBranches)
+                        .map(repoMapper::repoToRepoInfo));
+    }
+
+    private Flux<Repo> fetchRepos(String username) {
         return client.get()
                 .uri("/users/{username}/repos", username)
                 .retrieve()
@@ -29,11 +37,7 @@ public class RepoServiceImpl implements RepoService {
                         HttpStatus.NOT_FOUND::equals,
                         response -> Mono.error(new UserNotFoundException(username)))
                 .bodyToFlux(Repo.class)
-                .filter(repo -> !repo.isFork())
-                .flatMap(repo -> fetchBranches(repo)
-                        .collectList()
-                        .map(repo::withBranches)
-                        .map(repoMapper::repoToRepoInfo));
+                .filter(repo -> !repo.isFork());
     }
 
     private Flux<Branch> fetchBranches(Repo repo) {
