@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "aa69d888-2560-4ce0-be89-27ad0d29918d",
+		"name": "repo-viewer-requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18857418"
+	},
+	"item": [
+		{
+			"name": "repos-controller",
+			"item": [
+				{
+					"name": "getReposByUsername200",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://44.211.72.87:8080/api/v1/repos/dyskop",
+							"protocol": "http",
+							"host": [
+								"44",
+								"211",
+								"72",
+								"87"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"repos",
+								"dyskop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReposByUsername404",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://44.211.72.87:8080/api/v1/repos/dyskopqqqq",
+							"protocol": "http",
+							"host": [
+								"44",
+								"211",
+								"72",
+								"87"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"repos",
+								"dyskopqqqq"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReposByUsername406",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://44.211.72.87:8080/api/v1/repos/dyskopqqqq",
+							"protocol": "http",
+							"host": [
+								"44",
+								"211",
+								"72",
+								"87"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"repos",
+								"dyskopqqqq"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
