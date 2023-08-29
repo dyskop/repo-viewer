@@ -18,6 +18,4 @@ public class WebClientConfiguration implements WebFluxConfigurer {
                 .baseUrl(baseUrl)
                 .build();
     }
-
-
 }
