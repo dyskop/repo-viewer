@@ -1,0 +1,10 @@
+webclient:
+  base-url: https://api.github.com
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
